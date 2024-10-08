@@ -1,23 +1,18 @@
-import re
-
-
-
 # Pre-populated user data dictionary for testing
 user_data = {}
-
 
 # Function to check if a password is valid
 def is_valid_password(password):
     # Password rule: at least 8 characters, 1 uppercase, 1 lowercase, 1 digit, and 1 special character
     if len(password) < 8:
         return False
-    if not re.search(r'[A-Z]', password):
+    if not any(char.isupper() for char in password):
         return False
-    if not re.search(r'[a-z]', password):
+    if not any(char.islower() for char in password):
         return False
-    if not re.search(r'[0-9]', password):
+    if not any(char.isdigit() for char in password):
         return False
-    if not re.search(r'[!@#$%^&*(),.?":{}|<>]', password):
+    if not any(char in "!@#$%^&*(),.?\":{}|<>" for char in password):
         return False
     return True
 
@@ -26,19 +21,20 @@ def is_valid_age(age_input):
     try:
         age = int(age_input)
         return age
-    except ValueError:   """ValueError is a built-in exception in Python that occurs
-                        when a function receives an argument of the correct data type but an inappropriate value"""
-    return None
+    except ValueError:  
+        return None
 
 # Function to check if a name only contains alphabetic characters
 def is_valid_name(name):
     return name.isalpha()
 
-# Function to check if an email is valid using regex
+# Function to check if an email is valid without using regex
 def is_valid_email(email):
-    # Email regex pattern: local_part@domain.extension
-    pattern = r'^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$'
-    return re.match(pattern, email) is not None
+    if "@" in email and "." in email:
+        local_part, domain = email.split("@", 1)
+        if "." in domain and local_part and domain:
+            return True
+    return False
 
 # Function for signing up a new user
 def signup():
@@ -109,7 +105,7 @@ def signin():
 
 # Main menu function
 def main_menu():
-    while True:
+    while True:  
         print("\n1. Signup\n2. Sign-in\n3. Exit")
         choice = input("Choose an option: ")
         
@@ -125,4 +121,3 @@ def main_menu():
 
 # Start the program
 main_menu()
-
