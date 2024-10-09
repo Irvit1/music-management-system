@@ -50,6 +50,7 @@ class SongsManagementSystem:
 
     def load_song_data(self, file_name: str) -> None:
         self.database_file = file_name
+        unique_songs = set()
         try:
             song_data = read_file(self.file_path, file_name)
             for line in song_data:
@@ -57,7 +58,10 @@ class SongsManagementSystem:
                 if len(data) == 5:
                     title, artist, album, genre, duration = data
                     song = Song(title, artist, album, genre, duration)
-                    self._add_song(song)
+
+                    if song not in unique_songs:
+                        unique_songs.add(song)
+                        self._add_song(song)
                 else:
                     raise InvalidFileFormatError(file_name)
         except InvalidFileFormatError as e:

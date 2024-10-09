@@ -14,10 +14,9 @@ def read_file(file_path: str, file_name: str) -> list:
     try:
         with open(os.path.join(file_path, file_name), 'r') as file:
             return file.readlines()
-    except FileNotFoundError:
-        raise FileNotFoundErrorCustom(file_name)
-    except IOError as e:
-        raise IOError(f"Error reading file '{file_name}': {str(e)}")
+    except FileNotFoundErrorCustom as e:
+        print(e)
+        file_name = input("Enter the correct file name: ")
 
 def write_file(file_path: str, file_name: str, data: list) -> None:
     """Writes data to a file at `file_path/file_name`."""
