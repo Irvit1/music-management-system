@@ -104,7 +104,7 @@ class SongsManagementSystem:
                     if not self.database[artist]:
                         self.database.pop(artist)
                     delete_file_entry(self.file_path, self.database_file, old_entry)
-                    print(f'Deleted "{title}" by "{artist}" from the database.')
+                    print(f'Deleted "{song.title}" by "{song.artist}" from the database.')
                     return
             raise SongNotFoundException(title)
         except EmptyDatabaseException as e:
@@ -133,7 +133,7 @@ class SongsManagementSystem:
 
                     new_entry = f"{song.title},{artist},{song.album},{song.genre},{song.duration}"
                     update_file_entry(self.file_path, self.database_file, old_entry, new_entry)
-                    print(f'Modified "{title}" by "{artist}".')
+                    print(f'Modified "{song.title}" by "{song.artist}".')
                     return
             raise SongNotFoundException(title)
         except EmptyDatabaseException as e:
