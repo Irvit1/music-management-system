@@ -4,8 +4,6 @@ Create a singleton for Song Management System as in single
 Create a menu driven function which will be used to run the function
 
 """
-import sys
-import os
 
 # Add the parent directory to the Python path
 sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
