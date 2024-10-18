@@ -37,15 +37,15 @@ import os
 # Add the parent directory to the Python path
 sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 
-from utils import delete_file_entry, read_file, update_file_entry, write_file
+from utils import delete_file_entry, read_file, update_file_entry
 from custom_exceptions import ArtistNotFoundException, EmptyDatabaseException, InvalidFileFormatError, SongNotFoundException
-from song import Song
+from task2.song import Song
 
 class SongsManagementSystem:
 
     def __init__(self) -> None:
         self.database = {}
-        self.file_path = "../music-management-system/database"
+        self.file_path = "<FILEPATH>"
         self.database_file = None
 
     def load_song_data(self, file_name: str) -> None:

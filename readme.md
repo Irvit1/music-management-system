@@ -27,3 +27,19 @@ For Windows
 ```
 pip install -r requirements.txt
 ```
+
+# Run the code
+1. Set the File path like this in task2/song_managament_sys.py
+   self.file_path = "../music-management-system/database"
+2. To run task 1
+   ```
+   python task1/prob1_exec.py
+   ```
+   To run task 2
+   ```
+   python task2/prob2_exec.py
+   ```
+   To run task 3
+   ```
+   python task3/prob3_exec.py
+   ```
