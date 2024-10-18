@@ -11,8 +11,6 @@ Create a class named SongsManagementSystemUser
 
 """
 
-
-
 from custom_exceptions import ArtistNotFoundException, SongNotFoundException
 from task2.song_management_sys import SongsManagementSystem
 

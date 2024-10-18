@@ -7,3 +7,4 @@ Hey Jude,The Beatles,The Beatles (White Album),Rock,7:11
 What's Going On,Marvin Gaye,What's Going On,Soul,3:53
 Stairway to Heaven,Led Zeppelin,Led Zeppelin IV,Rock,8:02
 Purple Rain,Prince,Purple Rain,pope,1:23
+Imaginne,John Lennon,Imagine,Rock,3:03
