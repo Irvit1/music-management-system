@@ -46,3 +46,10 @@ pip install -r requirements.txt
 
 # Github Repo Link
 https://github.com/Irvit1/music-management-system/settings
+
+# Group 2
+
+# Contributors
+Irvit Gupta
+Harsh Trivedi
+Ayussh Agarwal
